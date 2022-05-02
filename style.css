@@ -72,7 +72,7 @@ body {
   border-radius: 50%;
   border-width: 0;
   background-color: hsl(150, 100%, 66%);
-  transition: 200ms ease-in-out;
+  transition: 100ms ease-in-out;
   display: flex;
 }
 
@@ -85,6 +85,10 @@ body {
   box-shadow: 0 0 7px 5px rgba(82, 255, 168, 0.1),
     0 0 7px 10px rgba(82, 255, 168, 0.08), 0 0 7px 15px rgba(82, 255, 168, 0.06),
     0 0 7px 20px rgba(82, 255, 168, 0.04), 0 0 7px 25px rgba(82, 255, 168, 0.02);
+}
+
+.card .btn button:active {
+  transform: scale(1);
 }
 
 .attribution {
