@@ -16,25 +16,20 @@
     <div class="container">
       <div class="card">
         <div class="card-content">
-          <h1>Advice #117<!-- Advice ID goes here --></h1>
+          <h1>Advice #<span id="id"></span></h1>
           <p>
-            <!-- Advice text goes here -->
             &ldquo;
-            <span>
-              It is easy to sit up and take notice, what's difficult is getting
-              up and taking action.
-            </span>
+            <span id="advice"> </span>
             &rdquo;
           </p>
           <img src="images/pattern-divider-desktop.svg" alt="pattern-divider" />
         </div>
 
         <div class="btn">
-          <a href="#">
+          <button onclick="getNewAdvice()">
             <img src="images/icon-dice.svg" alt="icon-dice" />
-          </a>
+          </button>
         </div>
-        
       </div>
     </div>
 
@@ -47,5 +42,20 @@
         >Abdelkadir BOUZIANE</a
       >.
     </div>
+    <script>
+      const id = document.getElementById("id");
+      const advice = document.getElementById("advice");
+
+      window.onload = getNewAdvice;
+
+      function getNewAdvice() {
+        fetch("https://api.adviceslip.com/advice")
+          .then((res) => res.json())
+          .then((obj) => {
+            id.innerHTML = obj.slip.id;
+            advice.innerHTML = obj.slip.advice;
+          });
+      }
+    </script>
   </body>
 </html>

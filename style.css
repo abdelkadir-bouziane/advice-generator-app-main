@@ -66,21 +66,21 @@ body {
   transform: translate(-50%, 50%);
 }
 
-.card .btn a {
-  display: block;
+.card .btn button {
   height: 100%;
   width: 100%;
   border-radius: 50%;
+  border-width: 0;
   background-color: hsl(150, 100%, 66%);
   transition: 200ms ease-in-out;
   display: flex;
 }
 
 .card .btn img {
-  margin: 1em;
+  margin: auto;
 }
 
-.card .btn a:hover {
+.card .btn button:hover {
   transform: scale(1.07);
   box-shadow: 0 0 7px 5px rgba(82, 255, 168, 0.1),
     0 0 7px 10px rgba(82, 255, 168, 0.08), 0 0 7px 15px rgba(82, 255, 168, 0.06),
@@ -102,4 +102,10 @@ body {
 
 .attribution a:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 375px) {
+  .card-content img {
+    content: url(images/pattern-divider-mobile.svg);
+  }
 }
